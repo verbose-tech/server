@@ -16,6 +16,12 @@ class PassengerSerializer(serializers.ModelSerializer):
         read_only_fields = ('id',)
 
 
+class PassengerUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Passenger
+        fields = ['wallet', 'boarding_flag']
+
+
 class BeaconSerializer(serializers.ModelSerializer):
     class Meta:
         model = Route

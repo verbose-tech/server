@@ -16,12 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from bus.views import RouteListView, BeaconListView, RouteInfoView, PassengerView
+from bus.views import RouteListView, BeaconListView, RouteInfoView, PassengerView, PassengerUpdateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^api/bus/passenger/$', PassengerView.as_view(), name='passenger_create'),
+    url(r'^api/bus/passenger/(?P<pk>\d+)/$', PassengerUpdateView.as_view(), name='passenger_update'),
     url(r'^api/bus/route/$', RouteListView.as_view(), name='bus_route_list'),
     url(r'^api/bus/beacon/$', BeaconListView.as_view(), name='bus_beacon_list'),
     url(r'^api/bus/routeinfo/(?P<pk>\d+)/$', RouteInfoView.as_view(), name='bus_route_info'),

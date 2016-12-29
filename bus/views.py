@@ -5,7 +5,8 @@ from rest_framework.generics import ListAPIView, UpdateAPIView, CreateAPIView
 from rest_framework.response import Response
 
 from bus.models import Route, Beacon, Passenger
-from bus.serializers import RouteSerializer, BeaconSerializer, RouteInfoUpdateSerializer, PassengerSerializer
+from bus.serializers import RouteSerializer, BeaconSerializer, RouteInfoUpdateSerializer, PassengerSerializer, \
+    PassengerUpdateSerializer
 
 
 class RouteListView(ListAPIView):
@@ -27,4 +28,10 @@ class RouteInfoView(UpdateAPIView):
 
 class PassengerView(CreateAPIView):
     serializer_class = PassengerSerializer
+    queryset = Passenger.objects.all()
+
+
+class PassengerUpdateView(UpdateAPIView):
+    lookup_field = 'pk'
+    serializer_class = PassengerUpdateSerializer
     queryset = Passenger.objects.all()

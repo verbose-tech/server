@@ -7,6 +7,8 @@ class Passenger(models.Model):
     email = models.EmailField(unique=True, blank=False, null=False)
     name = models.CharField(max_length=100)
     profile_pic = models.TextField()
+    wallet = models.FloatField(default=0)
+    boarding_flag = models.BooleanField(default=False)
 
 
 class Route(models.Model):

@@ -26,7 +26,8 @@ SECRET_KEY = 'a2exe^@g@5(m+xz3e4hxk13o2mv5of#e%sxe3w&j=-_5t-n#)%'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '52.42.47.34:8000'
+    '52.42.47.34:8000',
+    '52.42.47.34'
 ]
 
 

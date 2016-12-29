@@ -25,7 +25,9 @@ SECRET_KEY = 'a2exe^@g@5(m+xz3e4hxk13o2mv5of#e%sxe3w&j=-_5t-n#)%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '52.42.47.34:8000'
+]
 
 
 # Application definition
